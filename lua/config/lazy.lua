@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
     spec = {
         { import = 'plugins' },
+        { import = 'plugins/extras' },
     },
     defaults = { lazy = true },
     performance = {
@@ -36,4 +37,3 @@ require('lazy').setup {
         },
     },
 }
-
