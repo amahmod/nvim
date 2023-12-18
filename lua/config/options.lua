@@ -4,7 +4,6 @@ vim.g.mapleader = ' '
 
 local opt = vim.opt
 
-
 --         ╔══════════════════════════════════════════════════════════╗
 --         ║                         General                          ║
 --         ╚══════════════════════════════════════════════════════════╝
@@ -78,6 +77,7 @@ opt.number = true -- Show line number
 opt.relativenumber = true -- Show relative line numbers
 opt.ruler = false -- Disable default status ruler
 opt.list = true -- Show hidden characters
+opt.signcolumn = 'yes' -- Always show the signcolumn, otherwise it would shift the text each time
 
 opt.showtabline = 0 -- Always show the tabs line
 opt.winwidth = 30 -- Minimum width for active window
