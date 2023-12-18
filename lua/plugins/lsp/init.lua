@@ -35,7 +35,7 @@ return {
             servers = require 'plugins.lsp.servers',
         },
         config = function(_, opts)
-            local lsp_utils = require 'plugins.lsp.utils'
+            local lsp_utils = require 'utils.lsp'
             local toggle = require 'utils.toggle'
 
             local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
