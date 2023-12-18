@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local toggle = require 'utils.toggle'
 
 -- {{{ Arrow-keys resize window
 
@@ -39,7 +40,7 @@ map('n', '[t', '<cmd>tabprevious<CR>', { desc = 'Previous Tab' })
 map('n', '<leader>ts', '<cmd>set spell!<CR>', { desc = 'Toggle spell check' })
 
 map('n', '<leader>th', function()
-    vim.lsp.inlay_hint(0, nil)
+    toggle.inlay_hints()
 end, { desc = 'Toggle Inlay Hints' })
 
 -- Smart wrap toggle (breakindent and colorcolumn toggle as-well)
@@ -164,4 +165,3 @@ map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear Search Highlight' })
 -- }}}
 
 -- vim:fdm=marker:fdl=0
-
