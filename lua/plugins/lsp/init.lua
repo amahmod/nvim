@@ -1,3 +1,4 @@
+local user_settigns = require 'config.settings'
 return {
     {
         'neovim/nvim-lspconfig',
@@ -21,7 +22,7 @@ return {
                 severity_sort = true,
             },
             inlay_hints = {
-                enabled = false,
+                enabled = user_settigns.inlay_hints,
             },
             capabilities = {
                 textDocument = {
@@ -37,8 +38,6 @@ return {
         config = function(_, opts)
             local lsp_utils = require 'utils.lsp'
             local toggle = require 'utils.toggle'
-
-            local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
 
             lsp_utils.on_attach(function(client, bufnr)
                 require('plugins.lsp.keymaps').on_attach(client, bufnr)
