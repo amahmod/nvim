@@ -129,6 +129,9 @@ vim.filetype.add {
         ['.watchmanconfig'] = 'json',
         ['dev-requirements.txt'] = 'requirements',
     },
+    extension = {
+        pcss = 'css',
+    },
     pattern = {
         ['.*%.js%.map'] = 'json',
         ['.*%.postman_collection'] = 'json',
