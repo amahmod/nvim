@@ -32,7 +32,17 @@ return {
             return vim.loop.cwd()
         end,
     },
-    svelte = {},
+    svelte = {
+        settings = {
+            capabilities = {
+                workspace = {
+                    didChangeWatchedFiles = {
+                        dynamicRegistration = true,
+                    },
+                },
+            },
+        },
+    },
     volar = {},
     eslint = {},
     tailwindcss = {},
