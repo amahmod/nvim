@@ -37,6 +37,7 @@ return {
                 svelte = { prettier },
                 typescript = { prettier },
                 sql = { 'pg_format' },
+                sh = { 'shfmt' },
             },
         }
     end,
