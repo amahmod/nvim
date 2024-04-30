@@ -12,16 +12,11 @@ end
 local keymaps = {
     { 'n', 'gd', vim.lsp.buf.definition, '[G]oto [D]efinition' },
     { 'n', 'gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration' },
-    { 'n', 'gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences' },
     { 'n', 'gy', vim.lsp.buf.type_definition, 'Type [D]efinition' },
-    { 'n', 'gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation' },
-    { 'n', 'gi', require('telescope.builtin').lsp_incoming_calls, 'Incoming calls' },
-    { 'n', 'go', require('telescope.builtin').lsp_outgoing_calls, 'Outgoing calls' },
     { 'n', 'K', vim.lsp.buf.hover, 'Hover Documentation' },
     { 'n', 'gK', vim.lsp.buf.signature_help, 'Signature Documentation' },
-    { 'n', '<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction' },
     { 'n', '<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame' },
-    { 'i', '<C-i>', vim.lsp.buf.signature_help, 'Signature Documentation' },
+    -- { 'i', '<C-i>', vim.lsp.buf.signature_help, 'Signature Documentation' },
 
 
 
