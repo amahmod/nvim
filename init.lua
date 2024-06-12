@@ -22,7 +22,7 @@ require('lazy').setup {
     spec = {
         { import = 'plugins' },
     },
-    chnage_detection = {
+    change_detection = {
         notify = false,
     },
 }
