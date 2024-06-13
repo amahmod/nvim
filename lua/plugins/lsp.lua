@@ -20,7 +20,10 @@ return {
             local lspconfig = require 'lspconfig'
 
             local servers = {
+                html = true,
                 bashls = true,
+                eslint = true,
+                tailwindcss = true,
                 gopls = {
                     settings = {
                         gopls = {
@@ -40,19 +43,36 @@ return {
                     server_capabilities = {
                         semanticTokensProvider = vim.NIL,
                     },
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = {
+                                    'vim',
+                                    'use',
+                                    'describe',
+                                    'it',
+                                    'assert',
+                                    'before_each',
+                                    'after_each',
+                                },
+                            },
+                        },
+                    },
                 },
                 rust_analyzer = true,
                 svelte = true,
                 templ = true,
                 cssls = true,
 
-                -- Probably want to disable formatting for this lang server
+                denols = {
+                    root_dir = require('lspconfig').util.root_pattern('deno.json', 'deno.jsonc'),
+                },
                 tsserver = {
+                    root_dir = require('lspconfig').util.root_pattern 'package.json',
                     server_capabilities = {
                         documentFormattingProvider = false,
                     },
                 },
-
                 jsonls = {
                     settings = {
                         json = {
