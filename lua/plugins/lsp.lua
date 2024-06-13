@@ -148,6 +148,17 @@ return {
                             client.server_capabilities[k] = v
                         end
                     end
+
+                    -- fix: svelte-language-server watcher doesn't work in neovim lspconfig
+                    -- https://github.com/sveltejs/language-tools/issues/2008#issuecomment-1838251681
+                    if client.name == 'svelte' then
+                        vim.api.nvim_create_autocmd('BufWritePost', {
+                            pattern = { '*.js', '*.ts' },
+                            callback = function(ctx)
+                                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+                            end,
+                        })
+                    end
                 end,
             })
         end,
