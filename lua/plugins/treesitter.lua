@@ -13,6 +13,7 @@ return {
             'TSConfigInfo',
             'TSUpdateSync',
         },
+        lazy = false,
         keys = {
             { 'v', desc = 'Increment selection', mode = 'x' },
             { 'V', desc = 'Shrink selection', mode = 'x' },
