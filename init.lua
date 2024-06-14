@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 
 require 'keymaps'
 require 'options'
+require 'autocmds'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
