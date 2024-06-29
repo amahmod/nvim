@@ -13,8 +13,8 @@ return {
             autosave_changes = 'unmodified',
         },
         keymaps = {
-            ['l'] = 'actions.select',
-            ['h'] = 'actions.parent',
+            ['L'] = 'actions.select',
+            ['H'] = 'actions.parent',
         },
     },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
