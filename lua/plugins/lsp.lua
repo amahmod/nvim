@@ -1,3 +1,11 @@
+local function diagnostic_goto(next, severity)
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go { severity = severity }
+    end
+end
+
 return {
     {
         'neovim/nvim-lspconfig',
@@ -152,6 +160,13 @@ return {
                     vim.keymap.set('n', '<leader>hd', vim.diagnostic.open_float, { buffer = 0 })
                     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = 0 })
                     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = 0 })
+
+                    vim.keymap.set('n', '[d', diagnostic_goto(true))
+                    vim.keymap.set('n', ']d', diagnostic_goto(false))
+                    vim.keymap.set('n', ']e', diagnostic_goto(true, 'ERROR'))
+                    vim.keymap.set('n', '[e', diagnostic_goto(false, 'ERROR'))
+                    vim.keymap.set('n', ']w', diagnostic_goto(true, 'WARNING'))
+                    vim.keymap.set('n', '[w', diagnostic_goto(false, 'WARNING'))
 
                     local filetype = vim.bo[bufnr].filetype
                     if disable_semantic_tokens[filetype] then
