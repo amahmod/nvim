@@ -3,11 +3,12 @@ return {
         'EdenEast/nightfox.nvim',
         priority = 1000,
         config = function()
+            local settings = require 'settings'
             require('nightfox').setup {
                 options = {
                     compile_path = vim.fn.stdpath 'cache' .. '/nightfox',
                     compile_file_suffix = '_compiled', -- Compiled file suffix
-                    transparent = false,
+                    transparent = settings.transparent_background,
                     terminal_colors = true,
                     dim_inactive = false,
                     module_default = true,
