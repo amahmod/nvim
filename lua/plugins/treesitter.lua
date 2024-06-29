@@ -1,3 +1,4 @@
+local settings = require 'settings'
 return {
     {
         'nvim-treesitter/nvim-treesitter',
@@ -96,6 +97,12 @@ return {
         },
         config = function(_, opts)
             require('nvim-treesitter.configs').setup(opts)
+            if settings.treesitter_folding then
+                vim.cmd [[
+                set foldmethod=expr
+                set foldexpr=nvim_treesitter#foldexpr()
+            ]]
+            end
         end,
     },
 }
