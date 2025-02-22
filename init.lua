@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 
+local is_vscode = vim.g.vscode
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
@@ -20,7 +21,14 @@ require('lazy').setup {
         {
             import = 'plugins',
             cond = function()
-                return not vim.g.vscode
+                return not is_vscode
+            end,
+        },
+        -- vscode
+        {
+            import = 'vscode_neovim_config/plugins',
+            cond = function()
+                return is_vscode
             end,
         },
     },
@@ -31,3 +39,11 @@ require('lazy').setup {
 
 require 'options'
 require 'mappings'
+
+if is_vscode then
+    require 'vscode_neovim_config'
+else
+    require 'options'
+    require 'autocmds'
+    require 'mappings'
+end
