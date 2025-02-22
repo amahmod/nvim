@@ -28,3 +28,5 @@ require('lazy').setup {
         notify = false,
     },
 }
+
+require 'mappings'
