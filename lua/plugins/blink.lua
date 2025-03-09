@@ -4,7 +4,7 @@ return {
     version = '*',
     opts = {
         keymap = {
-            preset = 'default', -- default, super-tab, enter
+            preset = 'super-tab', -- default, super-tab, enter
         },
         appearance = {
             use_nvim_cmp_as_default = true,
