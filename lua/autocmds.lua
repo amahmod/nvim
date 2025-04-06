@@ -56,3 +56,12 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
     group = augroup 'checktime',
     command = 'checktime',
 })
+
+-- ───────────────────( Disable next line comments )───────────────────
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+    group = augroup 'disable_next_line_comments',
+    callback = function()
+        vim.cmd 'set formatoptions-=cro'
+        vim.cmd 'setlocal formatoptions-=cro'
+    end,
+})

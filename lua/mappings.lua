@@ -9,7 +9,7 @@ map('n', '<leader>q', '<cmd>q!<CR>', { desc = 'Quit' })
 map({ 'n', 'i', 'v' }, '<C-s>', '<cmd>w<CR>', { desc = 'Save' })
 
 -- Buffer operations - use 'b' prefix for consistency
-map('n', '<leader>bd', function()
+map('n', '<leader>x', function()
     local has_bufremove, bufremove = pcall(require, 'mini.bufremove')
     if has_bufremove then
         bufremove.delete(0, false)
