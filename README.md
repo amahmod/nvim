@@ -6,29 +6,29 @@ A feature-rich, modular Neovim configuration optimized for web development with 
 
 ### Editor Experience
 
--   🤖 AI-powered coding assistance (GitHub Copilot, CodeCompanion)
--   🎨 Modern UI with Rose Pine theme
--   📊 Informative statusline with LSP integration
--   🔍 Fuzzy finding for files, text, and commands
--   📝 Advanced syntax highlighting with Treesitter
--   🔧 VSCode-like experience with optional VSCode Neovim integration
+- 🤖 AI-powered coding assistance (GitHub Copilot, CodeCompanion)
+- 🎨 Modern UI with Rose Pine theme
+- 📊 Informative statusline with LSP integration
+- 🔍 Fuzzy finding for files, text, and commands
+- 📝 Advanced syntax highlighting with Treesitter
+- 🔧 VSCode-like experience with optional VSCode Neovim integration
 
 ### Development Features
 
--   🚀 First-class TypeScript/JavaScript support
--   ✨ Intelligent code completion and snippets
--   🔍 Built-in LSP with advanced features
--   🎯 Automatic formatting and linting
--   🔄 Git integration
+- 🚀 First-class TypeScript/JavaScript support
+- ✨ Intelligent code completion and snippets
+- 🔍 Built-in LSP with advanced features
+- 🎯 Automatic formatting and linting
+- 🔄 Git integration
 
 ## 🛠️ Prerequisites
 
--   Neovim >= 0.9.0
--   Git
--   Node.js >= 18.x (for LSP features and Copilot)
--   A Nerd Font (for icons)
--   ripgrep (for fuzzy finding)
--   Optional: VSCode (for VSCode Neovim integration)
+- Neovim >= 0.9.0
+- Git
+- Node.js >= 18.x (for LSP features and Copilot)
+- A Nerd Font (for icons)
+- ripgrep (for fuzzy finding)
+- Optional: VSCode (for VSCode Neovim integration)
 
 ## 📦 Installation
 
@@ -59,38 +59,38 @@ A feature-rich, modular Neovim configuration optimized for web development with 
 
 ### General
 
--   `<Space>` - Leader key
--   `<leader>w` - Save file
--   `<leader>q` - Quit
--   `<C-s>` - Save file (works in all modes)
+- `<Space>` - Leader key
+- `<leader>w` - Save file
+- `<leader>q` - Quit
+- `<C-s>` - Save file (works in all modes)
 
 ### Navigation
 
--   `<C-h/j/k/l>` - Window navigation
--   `<S-l/h>` - Next/previous buffer
--   `<leader>e` - Toggle file explorer
+- `<C-h/j/k/l>` - Window navigation
+- `<S-l/h>` - Next/previous buffer
+- `<leader>e` - Toggle file explorer
 
 ### Code Actions
 
--   `gd` - Go to definition
--   `gr` - Find references
--   `K` - Show hover information
--   `<leader>ca` - Code actions
--   `<leader>rn` - Rename symbol
--   `[d/]d` - Previous/next diagnostic
--   `<leader>lf` - Format document
+- `gd` - Go to definition
+- `gr` - Find references
+- `K` - Show hover information
+- `<leader>ca` - Code actions
+- `<leader>rn` - Rename symbol
+- `[d/]d` - Previous/next diagnostic
+- `<leader>lf` - Format document
 
 ### AI Features
 
--   `<C-a>` - CodeCompanion actions
--   `<leader>a` - Toggle CodeCompanion chat
--   `<Tab>` - Accept Copilot suggestion
+- `<C-a>` - CodeCompanion actions
+- `<leader>a` - Toggle CodeCompanion chat
+- `<Tab>` - Accept Copilot suggestion
 
 ### Git
 
--   `<leader>gg` - Open Lazygit
--   `<leader>gd` - View git diff
--   `<leader>gb` - View git branches
+- `<leader>gg` - Open Lazygit
+- `<leader>gd` - View git diff
+- `<leader>gb` - View git branches
 
 ## 📁 Configuration Structure
 
