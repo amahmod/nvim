@@ -7,12 +7,12 @@ return {
         'CodeCompanionCmd',
     },
     keys = {
-        { '<C-a>', mode = { 'n', 'v' }, '<cmd>CodeCompanionActions<cr>' },
-        { '<leader>a', mode = { 'n', 'v' }, '<cmd>CodeCompanionChat Toggle<cr>' },
-        { '<leader>A', mode = { 'v' }, '<cmd>CodeCompanionChat Add<cr>' },
-        { '<leader>i', mode = { 'n' }, '<cmd>CodeCompanion<cr>' },
+        { '<C-S-i>', mode = { 'n', 'v' }, '<cmd>CodeCompanionActions<cr>' },
+        { '<C-i>', mode = { 'n', 'v' }, '<cmd>CodeCompanionChat Toggle<cr>' },
+        { '<C-i>', mode = { 'v' }, '<cmd>CodeCompanionChat Add<cr>' },
+        { '<C-k>', mode = { 'n' }, '<cmd>CodeCompanion<cr>' },
         {
-            '<leader>i',
+            '<C-k>',
             mode = { 'v', 'x' },
             function()
                 local start_pos = vim.api.nvim_buf_get_mark(0, '<')
@@ -38,12 +38,17 @@ return {
             display = {
                 chat = {
                     show_settings = false,
+                    auto_scroll = true,
+                    start_in_insert_mode = false, -- Open the chat buffer in insert mode?
                 },
                 diff = {
-                    provider = 'mini_diff', -- default|mini_diff
+                    provider = 'default', -- default|mini_diff
                 },
             },
             adapters = {
+                opts = {
+                    show_defaults = false,
+                },
                 anthropic = function()
                     return require('codecompanion.adapters').extend('anthropic', {
                         env = {
@@ -59,10 +64,30 @@ return {
                         },
                     })
                 end,
+                copilot = function()
+                    return require('codecompanion.adapters').extend('copilot', {
+                        schema = {
+                            model = {
+                                default = 'claude-3.7-sonnet',
+                            },
+                        },
+                    })
+                end,
             },
             strategies = {
                 chat = {
                     adapter = 'copilot',
+                    roles = {
+                        ---The header name for the LLM's messages
+                        ---@type string|fun(adapter: CodeCompanion.Adapter): string
+                        llm = function(adapter)
+                            return 'CodeCompanion (' .. adapter.formatted_name .. ')'
+                        end,
+
+                        ---The header name for your messages
+                        ---@type string
+                        user = 'amahmod',
+                    },
                 },
                 agent = {
                     adapter = 'copilot',
@@ -82,6 +107,6 @@ return {
                 },
             },
         }
-        require('plugins.ai_completion.codecompanion_fidget_spinner'):init()
+        require 'plugins.ai_completion.codecompanion_fidget_spinner'
     end,
 }
